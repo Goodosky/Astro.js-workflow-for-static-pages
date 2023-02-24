@@ -1,81 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { Picture, BackgroundPicture } from "astro-imagetools/components";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-  </main>
-</Layout>
+<Layout title="Site title" description="Site description">
+  <!-- Hero -->
+  <section class="bg-neutral-100">
+    <div class="container py-16">
+      <h1>Stylebook H1</h1>
+      <p class="text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
+        libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
+        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
+        deleniti suscipit at, eius aperiam sequi sapiente reiciendis porro.
+      </p>
+    </div>
+  </section>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
+  <!-- Buttons -->
+  <section class="container">
+    <h2 class="mt-16 mb-8">Buttons:</h2>
+    <div class="flex gap-5 mb-10">
+      <a href="#" class="btn">Btn primary</a>
+      <a href="#" class="btn2">Btn dark</a>
+    </div>
+  </section>
+
+  <!-- Collapses -->
+  <section class="container">
+    <h2 class="mt-16 mb-8">Collapses:</h2>
+  </section>
+
+  <!-- Collapses -->
+  <section class="container">
+    <h2 class="mt-16 mb-8">Icons:</h2>
+  </section>
+
+  <!-- Responsive images -->
+  <section class="container">
+    <h2 class="mt-16 mb-8">Responsive images:</h2>
+    <div class="grid grid-cols-2 gap-10">
+      <Picture src="/src/images/demo-img.jpg" alt="" />
+      <Picture src="/src/images/demo-img.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- Background image -->
+  <BackgroundPicture src="/src/images/bg-img.jpg">
+    <div class="container py-10 mt-16">
+      <h2 class="text-white">Background image</h2>
+      <p class="text-white/75 max-w-[900px]">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
+        libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
+        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
+        deleniti suscipit at, eius aperiam sequi sapiente reiciendis porro.
+      </p>
+    </div>
+  </BackgroundPicture>
+</Layout>

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- BASE STYLES --- */
+@layer base {
+  body {
+    @apply text-text font-text;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-header font-header mb-[0.4em];
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl;
+  }
+  h2 {
+    @apply text-[2rem] sm:text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+
+  p {
+    @apply text-[1.1875rem] !leading-[170%];
+  }
+}
+
+/* --- COMPONENTS --- */
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-2 font-medium transition-colors duration-200 rounded-lg cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply text-black btn bg-primary hover:bg-dark hover:text-white;
+  }
+
+  .btn-dark {
+    @apply text-white btn bg-dark hover:bg-secondary hover:text-white;
+  }
+}
+
+/* --- UTILITIES --- */
+@layer utilities {
+  .row {
+    @apply flex flex-row flex-wrap items-center;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .link-stretched:after {
+    @apply content-[''] absolute inset-0;
+  }
+
+  .animated-underline {
+    @apply py-0.5;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(theme("colors.primary"), theme("colors.primary"));
+    background-size: 0 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+  }
+
+  .animated-underline:hover {
+    background-size: 100% 1.5px;
+  }
+
+  .inset-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
