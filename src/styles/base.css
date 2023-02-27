@@ -27,13 +27,20 @@
   }
 
   p {
-    @apply text-[1.1875rem] !leading-[170%];
+    @apply text-[1.1875rem] !leading-[170%] tracking-[0.51px] mb-[0.75em];
+  }
+
+  .container-dark {
+    @apply container;
+    @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header;
+    @apply [&]:text-light-text;
   }
 }
 
 /* --- COMPONENTS --- */
 @layer components {
   .btn {
+    /* Base styles for btn (like in Bootsrap) */
     @apply inline-block px-6 py-2 font-medium transition-colors duration-200 rounded-lg cursor-pointer;
   }
 
@@ -41,8 +48,8 @@
     @apply text-black btn bg-primary hover:bg-dark hover:text-white;
   }
 
-  .btn-dark {
-    @apply text-white btn bg-dark hover:bg-secondary hover:text-white;
+  .btn-secondary {
+    @apply text-white btn bg-secondary hover:bg-dark hover:text-white;
   }
 }
 
@@ -60,24 +67,7 @@
     @apply content-[''] absolute inset-0;
   }
 
-  .animated-underline {
-    @apply py-0.5;
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(theme("colors.primary"), theme("colors.primary"));
-    background-size: 0 1.5px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.3s ease-in-out;
-  }
-
-  .animated-underline:hover {
-    background-size: 100% 1.5px;
-  }
-
   .inset-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @apply absolute top-1/2 left-1/2 translate-x-1/2 translate-y-1/2;
   }
 }

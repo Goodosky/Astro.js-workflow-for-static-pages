@@ -16,11 +16,15 @@ module.exports = {
 
       colors: {
         primary: "#86add3",
-        secondary: "#86add3",
+        secondary: "#255a8c",
         dark: "#0a082b",
         light: "#F9F9F9",
+
+        // Text colors
         header: "#000",
+        "light-header": "#ffffff",
         text: "#4d5154",
+        "light-text": "#eee",
       },
 
       screens: {

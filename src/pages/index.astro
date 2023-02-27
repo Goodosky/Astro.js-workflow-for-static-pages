@@ -1,60 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import { Picture, BackgroundPicture } from "astro-imagetools/components";
 ---
 
 <Layout title="Site title" description="Site description">
-  <!-- Hero -->
   <section class="bg-neutral-100">
     <div class="container py-16">
-      <h1>Stylebook H1</h1>
-      <p class="text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
-        libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
-        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
-        deleniti suscipit at, eius aperiam sequi sapiente reiciendis porro.
-      </p>
+      <h1>Just start writing code!</h1>
+      <p class="text-xl">You don't konow how to use ready components?</p>
+      <a href="/demo.html" class="btn-primary text-xl">Go to the demo site</a>
     </div>
   </section>
-
-  <!-- Buttons -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Buttons:</h2>
-    <div class="flex gap-5 mb-10">
-      <a href="#" class="btn">Btn primary</a>
-      <a href="#" class="btn2">Btn dark</a>
-    </div>
-  </section>
-
-  <!-- Collapses -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Collapses:</h2>
-  </section>
-
-  <!-- Collapses -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Icons:</h2>
-  </section>
-
-  <!-- Responsive images -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Responsive images:</h2>
-    <div class="grid grid-cols-2 gap-10">
-      <Picture src="/src/images/demo-img.jpg" alt="" />
-      <Picture src="/src/images/demo-img.jpg" alt="" />
-    </div>
-  </section>
-
-  <!-- Background image -->
-  <BackgroundPicture src="/src/images/bg-img.jpg">
-    <div class="container py-10 mt-16">
-      <h2 class="text-white">Background image</h2>
-      <p class="text-white/75 max-w-[900px]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
-        libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
-        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
-        deleniti suscipit at, eius aperiam sequi sapiente reiciendis porro.
-      </p>
-    </div>
-  </BackgroundPicture>
 </Layout>
