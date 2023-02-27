@@ -4,6 +4,7 @@
 window.onload = () => {
   let currentTarget = null;
   let currentToggle = null;
+  let isCollapsing = false;
 
   const handleToggle = (event) => {
     let toggleElement = event.currentTarget;
@@ -37,7 +38,7 @@ window.onload = () => {
 
   // --- UTILITIES ---
   const toggleAriaExpanded = (targetElement) => {
-    let toggleElements = document.querySelectorAll(`[data-target=${targetElement}]`);
+    let toggleElements = document.querySelectorAll(`[data-target="${targetElement}"]`);
     for (let i = 0; i < toggleElements.length; i++) {
       if (toggleElements[i].hasAttribute("aria-expanded")) {
         toggleElements[i].getAttribute("aria-expanded") == "true"
@@ -142,6 +143,8 @@ window.onload = () => {
 
   // --- 01. COLLAPSE ---
   const toggleCollapse = () => {
+    if (isCollapsing) return;
+
     const showCollapse = (targetElement) => {
       targetElement.classList.remove("h-0");
 
@@ -151,6 +154,7 @@ window.onload = () => {
       setTimeout(() => (targetElement.style.height = contentHeight), 50);
       setTimeout(() => targetElement.removeAttribute("style"), 500);
       enableTab(targetElement, false);
+      isCollapsing = false;
     };
 
     const hideCollapse = (targetElement) => {
@@ -159,17 +163,19 @@ window.onload = () => {
       targetElement.style.height = contentHeight;
       setTimeout(() => (targetElement.style.height = "0"), 50);
       setTimeout(() => targetElement.removeAttribute("style"), 500);
+
       targetElement.classList.add("h-0");
       disableTab(targetElement, false);
+      isCollapsing = false;
     };
 
     const toggleIcon = (targetElement) => {
-      let icon = document.querySelector(`[data-target=${targetElement}] .collapse-icon`);
+      let icon = document.querySelector(`[data-target="${targetElement}"] .collapse-icon`);
 
       if (icon != null) {
-        icon.classList.contains("rotate-180")
-          ? icon.classList.remove("rotate-180")
-          : icon.classList.add("rotate-180");
+        icon.classList.contains("rotate-90")
+          ? icon.classList.remove("rotate-90")
+          : icon.classList.add("rotate-90");
       }
     };
 

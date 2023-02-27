@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Collapse from "@components/Collapse.astro";
 import { Picture, BackgroundPicture } from "astro-imagetools/components";
+import { Icon } from "astro-icon";
 ---
 
 <Layout title="Site title" description="Site description">
@@ -18,8 +20,8 @@ import { Picture, BackgroundPicture } from "astro-imagetools/components";
   </section>
 
   <!-- Buttons -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Buttons:</h2>
+  <section class="container my-16">
+    <h2>Buttons:</h2>
     <div class="flex gap-5 mb-10">
       <a href="#" class="btn-primary">.btn-primary class</a>
       <a href="#" class="btn-secondary">.btn-secondary class</a>
@@ -27,13 +29,41 @@ import { Picture, BackgroundPicture } from "astro-imagetools/components";
   </section>
 
   <!-- Collapses -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Collapses:</h2>
+  <section class="container my-16">
+    <h2>Collapses:</h2>
+    <Collapse title="Lorem ipsum dolor sit amet">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
+      omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
+      ex dolorum?
+    </Collapse>
+
+    <h3>Grouped collapse (accordion)</h3>
+    <Collapse title="Accordion item 1" group="groupName">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
+      omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
+      ex dolorum?
+    </Collapse>
+    <Collapse title="Accordion item 2" group="groupName">
+      <span class="mb-4 block">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
+        omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis
+        aperiam ex dolorum?
+      </span>
+
+      <a href="#" class="btn-secondary">btn inside collapse</a>
+    </Collapse>
   </section>
 
   <!-- Icons -->
-  <section class="container">
-    <h2 class="mt-16 mb-8">Icons:</h2>
+  <section class="container my-16">
+    <h2>Icons:</h2>
+    <div class="flex gap-2 text-secondary [&_svg]:w-16 hover:[&_svg]:text-dark">
+      <Icon name="mdi:facebook" />
+      <Icon name="mdi:twitter" />
+      <Icon name="mdi:instagram" />
+      <Icon name="mdi:pinterest" />
+      <Icon name="ic:baseline-tiktok" />
+    </div>
   </section>
 
   <!-- Dark section -->
@@ -47,18 +77,18 @@ import { Picture, BackgroundPicture } from "astro-imagetools/components";
   <!-- Responsive images -->
   <section class="container">
     <h2 class="mt-16 mb-8">Responsive images:</h2>
-    <code class="mb-3 block">{'<Picture src="/src/images/demo-img.jpg" alt="" />'}</code>
+    <code class="mb-3 block">{'<Picture src="/src/assets/images/demo-img.jpg" alt="" />'}</code>
     <div class="grid grid-cols-2 gap-10">
-      <Picture src="/src/images/demo-img.jpg" alt="" />
-      <Picture src="/src/images/demo-img.jpg" alt="" />
+      <Picture src="/src/assets/images/demo-img.jpg" alt="" />
+      <Picture src="/src/assets/images/demo-img.jpg" alt="" />
     </div>
   </section>
 
   <!-- Background image -->
-  <BackgroundPicture src="/src/images/bg-img.jpg">
+  <BackgroundPicture src="/src/assets/images/bg-img.jpg">
     <div class="container-dark py-10 mt-16">
       <h2>Background image</h2>
-      <code class="mb-3 block">{'<BackgroundPicture src="/src/images/bg-img.jpg">'}</code>
+      <code class="mb-3 block">{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code>
       <p class="max-w-[900px]">
         Use BackgroundPicture coomponent. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio
         perspiciatis hic error nesciunt libero ab asperiores odio delectus nostrum id vero deleniti beatae alias

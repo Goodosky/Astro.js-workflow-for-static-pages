@@ -156,9 +156,40 @@ import { Icon } from 'astro-icon'
 
 ## My own components library
 
+> **Note**\
+> You can easily edit every component in `src/components/{COMPONENT NAME HERE}.astro`.
+
 ### Collapse
 
-...
+#### Single collapse
+
+```astro
+---
+import { Collapse } from '@components/Collapse.astro'
+---
+
+<Collapse title="Lorem ipsum dolor sit amet">
+  content here
+</Collapse>
+```
+
+#### Grouped collapse (accordion)
+
+Just add `group="{GROUP NAME HERE}"` attribute. For example:
+
+```astro
+---
+import { Collapse } from '@components/Collapse.astro'
+---
+
+<Collapse title="Accordion item 1" group="accordion-1">
+  content here
+</Collapse>
+
+<Collapse title="Accordion item 2" group="accordion-1">
+  content here
+</Collapse>
+```
 
 ### Modal
 
