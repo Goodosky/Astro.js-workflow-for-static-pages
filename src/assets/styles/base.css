@@ -64,7 +64,7 @@
   }
 
   .link-stretched:after {
-    @apply content-[''] absolute inset-0;
+    @apply content-[''] absolute inset-0; /* it's like in the Bootstrap */
   }
 
   .inset-center {
