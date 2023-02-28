@@ -1,39 +1,31 @@
-<header class="container flex items-center py-4">
-  <a class="text-3xl logo" href="/">LOGO</a>
+---
+import Offcanvas from "@components/Offcanvas.astro";
+import NavCollapse from "@helpers/NavCollapse.astro";
+---
 
-  <nav
-    class="invisible ml-auto text-white translate-x-full sidebar lg:sidebar-remove maxlg:gradient1"
-    id="mainNavigation"
-    tabindex="-1"
-    aria-label="Główna nawigacja">
-    <div class="flex justify-between items-center pt-3 border-b-2 mb-5 lg:hidden border-c1/40 pb-2.5">
-      <p class="mb-0 text-2xl font-medium">Menu</p>
-      <button type="button" data-target="mainNavigation" data-toggle="sidebar">
-        <svg class="close-btn-light" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-          <path
-            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <ul class="gap-7 maxlg:space-y-2 lg:flex text-white/95">
-      <li><a class="animated-underline" href="#">Poligrafia dla firm</a></li>
-      <li><a class="animated-underline" href="#">Reklama dla firm</a></li>
-      <li class="lg:hidden">
-        <span class="block pt-5 pb-1 text-base text-white/80">Skontaktuj się:</span><a
-          class="btn2"
-          href="mailto:biuro@kopia24.pl">biuro@kopia24.pl</a
-        >
-      </li>
-      <li class="lg:hidden"><a class="btn2" href="tel:+48510235280">+48 510 235 280</a></li>
-    </ul>
+<header class="container flex justify-between items-center py-4">
+  <a class="text-3xl logo" href="/">LOGO</a>
+  <nav>
+    <Offcanvas title="Menu" breakpoint="lg">
+      <!-- Toggler -->
+      <div slot="toggler" class="p-2 space-y-2" aria-label="Przełącz menu">
+        <span class="block w-8 h-0.5 bg-dark"></span>
+        <span class="block w-8 h-0.5 bg-dark"></span>
+        <span class="block w-8 h-0.5 bg-dark"></span>
+      </div>
+
+      <!-- Sidebar content -->
+      <ul class="gap-3 lg:gap-7 flex max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <NavCollapse title="NavCollapse">
+          <li><a href="#">Collapse Link 1</a></li>
+          <li><a href="#">Collapse Link 2</a></li>
+          <li><a href="#">Collapse Link 3</a></li>
+        </NavCollapse>
+        <li><a href="#">Link 5</a></li>
+      </ul>
+    </Offcanvas>
   </nav>
-  <button
-    class="ml-auto lg:hidden"
-    type="button"
-    data-target="mainNavigation"
-    data-toggle="sidebar"
-    aria-label="Przełącz nawigacje">
-    <div class="p-2 -mt-3 space-y-2 toggler" aria-hidden="true"><span></span><span></span><span></span></div>
-  </button>
 </header>

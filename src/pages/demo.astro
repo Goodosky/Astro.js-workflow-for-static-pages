@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Collapse from "@components/Collapse.astro";
+import Offcanvas from "@components/Offcanvas.astro";
 import { Picture, BackgroundPicture } from "astro-imagetools/components";
 import { Icon } from "astro-icon";
 ---
@@ -8,9 +9,9 @@ import { Icon } from "astro-icon";
 <Layout title="Site title" description="Site description">
   <!-- Hero -->
   <section class="bg-neutral-100">
-    <div class="container py-16">
+    <div class="container py-8 lg:py-16">
       <h1>Stylebook H1</h1>
-      <p class="text-xl">
+      <p class="lg:text-xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
         libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
         obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
@@ -20,16 +21,28 @@ import { Icon } from "astro-icon";
   </section>
 
   <!-- Buttons -->
-  <section class="container my-16">
+  <section class="container py-4 lg:py-8">
     <h2>Buttons:</h2>
-    <div class="flex gap-5 mb-10">
+    <div class="flex max-sm:flex-col gap-5">
       <a href="#" class="btn-primary">.btn-primary class</a>
       <a href="#" class="btn-secondary">.btn-secondary class</a>
     </div>
   </section>
 
+  <!-- Icons -->
+  <section class="container py-4 lg:py-8">
+    <h2>Icons:</h2>
+    <div class="flex gap-2 text-secondary [&_svg]:w-16 hover:[&_svg]:text-dark">
+      <Icon name="mdi:facebook" />
+      <Icon name="mdi:twitter" />
+      <Icon name="mdi:instagram" />
+      <Icon name="mdi:pinterest" />
+      <Icon name="ic:baseline-tiktok" />
+    </div>
+  </section>
+
   <!-- Collapses -->
-  <section class="container my-16">
+  <section class="container py-4 lg:py-8">
     <h2>Collapses:</h2>
     <Collapse title="Lorem ipsum dolor sit amet">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
@@ -37,7 +50,7 @@ import { Icon } from "astro-icon";
       ex dolorum?
     </Collapse>
 
-    <h3>Grouped collapse (accordion)</h3>
+    <p>Grouped collapses (accordion):</p>
     <Collapse title="Accordion item 1" group="groupName">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
       omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
@@ -54,16 +67,16 @@ import { Icon } from "astro-icon";
     </Collapse>
   </section>
 
-  <!-- Icons -->
-  <section class="container my-16">
-    <h2>Icons:</h2>
-    <div class="flex gap-2 text-secondary [&_svg]:w-16 hover:[&_svg]:text-dark">
-      <Icon name="mdi:facebook" />
-      <Icon name="mdi:twitter" />
-      <Icon name="mdi:instagram" />
-      <Icon name="mdi:pinterest" />
-      <Icon name="ic:baseline-tiktok" />
-    </div>
+  <!-- Offcanvas -->
+  <section class="container py-4 lg:py-8">
+    <h2>Offcanvas:</h2>
+    <Offcanvas title="Sidebar header" breakpoint="lg">
+      <!-- Toggler (visible only up to breakpoint size)-->
+      <div slot="toggler">Sidebar toggler</div>
+
+      <!-- Sidebar content (it will be normal list on devices larger than value of "breakpoint" attribute) -->
+      <div>Offcanvas content (this offcanvas works only for devices smaller than lg breakpoint)</div>
+    </Offcanvas>
   </section>
 
   <!-- Dark section -->
