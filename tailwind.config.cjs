@@ -1,6 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  safelist: [
+    // Sidebar
+    "md:div-reset",
+    "lg:div-reset",
+    "xl:div-reset",
+    "2xl:div-reset",
+    "md:hidden",
+    "lg:hidden",
+    "xl:hidden",
+    "2xl:hidden",
+
+    // Backdrop
+    "overflow-y-hidden",
+    "fixed",
+    "w-screen",
+    "h-screen",
+    "bg-neutral-900",
+    "opacity-50",
+    "z-20",
+    "transition",
+    "top-0",
+    "left-0",
+  ],
   theme: {
     extend: {
       container: {

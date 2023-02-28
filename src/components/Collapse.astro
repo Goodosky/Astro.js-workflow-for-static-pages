@@ -10,7 +10,6 @@ const { title, group } = Astro.props;
 
 // Draw random string and assign as id
 const id = (Math.random() + 1).toString(36).substring(7);
-const accordionAttribute = group ? `data-accordion="${group}"` : "";
 ---
 
 <div class="rounded-lg shadow-sm max-w-xl mb-5 border">

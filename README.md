@@ -161,6 +161,9 @@ import { Icon } from 'astro-icon'
 > **Note**\
 > You can easily edit every component in `src/components/{COMPONENT NAME HERE}.astro`.
 
+> **Note**\
+> You can check out `src/pages/demo.astro` to see how components work.
+
 ### Collapse
 
 #### Single collapse
@@ -196,3 +199,27 @@ import { Collapse } from '@components/Collapse.astro'
 ### Modal
 
 ...
+
+### Offcanvas
+
+```astro
+---
+import { Offcanvas } from '@components/Offcanvas.astro'
+---
+on devices up to the size of `breakpoint` the attribute will appear toggler, which after clicking will display offcanvas with sidebar content.
+On devices larger than `breakpoint` the toggler will disappear and "sidebar content" will appear as a normal element.
+
+<Offcanvas title="Menu" breakpoint="lg">
+  <!-- Toggler -->
+  <div slot="toggler">Toggle</div>
+
+  <!-- Sidebar content -->
+  <ul class="gap-7 flex max-lg:flex-col">
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="#">Link 4</a></li>
+    <li><a href="#">Link 5</a></li>
+  </ul>
+</Offcanvas>
+```

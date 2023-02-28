@@ -6,6 +6,7 @@
 @layer base {
   body {
     @apply text-text font-text;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1,
@@ -27,13 +28,23 @@
   }
 
   p {
-    @apply text-[1.1875rem] !leading-[170%] tracking-[0.51px] mb-[0.75em];
+    @apply text-[1rem]  lg:text-[1.1875rem] !leading-[170%] tracking-[0.51px] mb-[0.75em];
+  }
+
+  a {
+    @apply hover:text-black;
+  }
+
+  .animated-underline {
+    @apply relative after:w-0 hover:after:w-full after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-dark after:transition-all after:ease-out after:duration-200;
   }
 
   .container-dark {
     @apply container;
     @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header;
     @apply [&]:text-light-text;
+    @apply [&_a]:hover:text-white;
+    @apply [&_.animated-underline]:after:bg-white;
   }
 }
 
@@ -41,7 +52,7 @@
 @layer components {
   .btn {
     /* Base styles for btn (like in Bootsrap) */
-    @apply inline-block px-6 py-2 font-medium transition-colors duration-200 rounded-lg cursor-pointer;
+    @apply inline-block w-fit px-6 py-2 font-medium transition-colors duration-200 rounded-lg cursor-pointer;
   }
 
   .btn-primary {
@@ -69,5 +80,9 @@
 
   .inset-center {
     @apply absolute top-1/2 left-1/2 translate-x-1/2 translate-y-1/2;
+  }
+
+  .div-reset {
+    @apply static visible h-auto overflow-y-visible translate-x-0 bg-transparent w-auto px-0;
   }
 }

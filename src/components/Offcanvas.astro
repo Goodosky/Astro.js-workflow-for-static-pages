@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  title: string;
+  breakpoint: "md" | "lg" | "xl" | "2xl";
+}
+
+const { title, breakpoint = "lg" } = Astro.props;
+
+// Draw random string and assign as id
+const id = (Math.random() + 1).toString(36).substring(7);
+---
+
+<button class={`${breakpoint}:hidden block`} data-target={id} data-toggle="sidebar">
+  <slot name="toggler" />
+</button>
+
+<section
+  id={id}
+  class={`${breakpoint}:div-reset fixed top-0 right-0 z-30 flex flex-col h-screen overflow-y-auto transition bg-white px-5 min-w-[20rem] max-w-full w-80 translate-x-full`}
+  tabindex="-1">
+  <!-- Sidebar header -->
+  <div class={`${breakpoint}:hidden flex justify-between items-center pt-4 pb-3 mb-5 border-b-[1px]`}>
+    <!-- Header -->
+    <h4 class="text-2xl mb-0">{title}</h4>
+
+    <!-- Close btn -->
+    <button data-target={id} data-toggle="sidebar" class="w-9 h-9 text-zinc-700 rounded bg-zinc-100">
+      <Icon name="ion:close-outline" />
+    </button>
+  </div>
+  <div>
+    <slot />
+  </div>
+</section>
