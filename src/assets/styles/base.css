@@ -81,8 +81,4 @@
   .inset-center {
     @apply absolute top-1/2 left-1/2 translate-x-1/2 translate-y-1/2;
   }
-
-  .div-reset {
-    @apply static visible h-auto overflow-y-visible translate-x-0 bg-transparent w-auto px-0;
-  }
 }

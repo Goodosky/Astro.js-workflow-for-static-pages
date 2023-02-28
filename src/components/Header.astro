@@ -1,12 +1,14 @@
 ---
 import Offcanvas from "@components/Offcanvas.astro";
 import NavCollapse from "@helpers/NavCollapse.astro";
+
+const navbarBreakpoint = "lg";
 ---
 
-<header class="container flex justify-between items-center py-4">
+<header class="container flex items-center justify-between py-4">
   <a class="text-3xl logo" href="/">LOGO</a>
   <nav>
-    <Offcanvas title="Menu" breakpoint="lg">
+    <Offcanvas title="Menu" breakpoint={navbarBreakpoint}>
       <!-- Toggler -->
       <div slot="toggler" class="p-2 space-y-2" aria-label="Przełącz menu">
         <span class="block w-8 h-0.5 bg-dark"></span>
@@ -19,7 +21,7 @@ import NavCollapse from "@helpers/NavCollapse.astro";
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
-        <NavCollapse title="NavCollapse">
+        <NavCollapse title="NavCollapse" breakpoint={navbarBreakpoint}>
           <li><a href="#">Collapse Link 1</a></li>
           <li><a href="#">Collapse Link 2</a></li>
           <li><a href="#">Collapse Link 3</a></li>

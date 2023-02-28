@@ -3,34 +3,48 @@ import { Icon } from "astro-icon";
 
 interface Props {
   title: string;
+  breakpoint?: "md" | "lg" | "xl" | "2xl";
 }
 
-const { title } = Astro.props;
+const { title, breakpoint = "lg" } = Astro.props;
 
 // Draw random string and assign as id
 const id = (Math.random() + 1).toString(36).substring(7);
 ---
 
-<li class="group relative">
+<li class="relative group">
   <a
-    class="flex justify-between items-center gap-x-1 w-full after:hidden [&_svg]:aria-expanded:-rotate-90"
+    class="flex justify-between items-center gap-x-1 w-full after:hidden [&_svg]:aria-expanded:-rotate-90 group-hover:text-dark"
     data-target={id}
     data-toggle="collapse"
     aria-expanded="false"
     aria-controls={id}
     role="button">
-    <!-- <span class="text-base font-bold mb-0 sm:text-lg w-full">{title}</span> -->
     {title}
     <Icon
       name="ic:outline-arrow-forward-ios"
-      class="transition-transform w-4 h-4 duration-300 collapse-icon rotate-90"
+      class="w-4 h-4 transition-transform duration-300 rotate-90 collapse-icon"
     />
   </a>
 
-  <div id={id} class="h-0 overflow-hidden transition-all lg:group-hover:h-auto lg:absolute lg:top-full lg:-left-5">
+  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop`}>
     <ul
-      class="p-2 flex flex-col gap-2 lg:gap-4 lg:px-5 lg:py-3 lg:shadow-2xl [&_li]:whitespace-nowrap mt-3 lg:bg-white border group-hover:border-zinc-300 rounded">
+      class="flex flex-col p-2 gap-2 [&_li]:whitespace-nowrap mt-3 bg-white border group-hover:border-zinc-300 rounded">
       <slot />
     </ul>
   </div>
 </li>
+
+<style>
+  @tailwind components;
+
+  @layer components {
+    .NavCollapse-content-desktop {
+      @apply group-hover:h-auto absolute top-full -left-5;
+    }
+
+    .NavCollapse-content-desktop ul {
+      @apply gap-4 px-5 py-3 shadow-2xl;
+    }
+  }
+</style>
