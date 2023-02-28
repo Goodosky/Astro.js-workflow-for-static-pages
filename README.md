@@ -198,7 +198,11 @@ import { Collapse } from '@components/Collapse.astro'
 
 ### Modal
 
-...
+... Not ready yet ...
+
+### Slider
+
+... Not ready yet ...
 
 ### Offcanvas
 
@@ -214,7 +218,7 @@ On devices larger than `breakpoint` the toggler will disappear and "sidebar cont
   <div slot="toggler">Toggle</div>
 
   <!-- Sidebar content -->
-  <ul class="gap-7 flex max-lg:flex-col">
+  <ul class="flex gap-7 max-lg:flex-col">
     <li><a href="#">Link 1</a></li>
     <li><a href="#">Link 2</a></li>
     <li><a href="#">Link 3</a></li>
