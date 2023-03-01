@@ -2,24 +2,6 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   safelist: [
-    // Offcanvas/Sidebar
-    {
-      pattern: /hidden/,
-      variants: ["md", "lg", "xl", "2xl"],
-    },
-    {
-      pattern: /NavCollapse-content-desktop/,
-      variants: ["md", "lg", "xl", "2xl"],
-    },
-    {
-      pattern: /translate-x-0/,
-      variants: ["md", "lg", "xl", "2xl"],
-    },
-    {
-      pattern: /sidebar/,
-      variants: ["max-md", "max-lg", "max-xl", "max-2xl"],
-    },
-
     // Backdrop
     "overflow-y-hidden",
     "fixed",
