@@ -23,7 +23,7 @@ import { Icon } from "astro-icon";
   <!-- Buttons -->
   <section class="container py-4 lg:py-8">
     <h2>Buttons:</h2>
-    <div class="flex max-sm:flex-col gap-5">
+    <div class="flex gap-5 max-sm:flex-col">
       <a href="#" class="btn-primary">.btn-primary class</a>
       <a href="#" class="btn-secondary">.btn-secondary class</a>
     </div>
@@ -57,7 +57,7 @@ import { Icon } from "astro-icon";
       ex dolorum?
     </Collapse>
     <Collapse title="Accordion item 2" group="groupName">
-      <span class="mb-4 block">
+      <span class="block mb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
         omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis
         aperiam ex dolorum?
@@ -72,7 +72,7 @@ import { Icon } from "astro-icon";
     <h2>Offcanvas:</h2>
     <Offcanvas title="Sidebar header" breakpoint="lg">
       <!-- Toggler (visible only up to breakpoint size)-->
-      <div slot="toggler">Sidebar toggler</div>
+      <div slot="toggler" class="btn-primary">Sidebar toggler</div>
 
       <!-- Sidebar content (it will be normal list on devices larger than value of "breakpoint" attribute) -->
       <div>Offcanvas content (this offcanvas works only for devices smaller than lg breakpoint)</div>
@@ -80,7 +80,7 @@ import { Icon } from "astro-icon";
   </section>
 
   <!-- Dark section -->
-  <section class="bg-dark py-10">
+  <section class="py-10 bg-dark">
     <div class="container-dark">
       <h2>Its dark section</h2>
       <p>Use .container-dark insted .container to have light font colors etc...</p>
@@ -90,7 +90,7 @@ import { Icon } from "astro-icon";
   <!-- Responsive images -->
   <section class="container">
     <h2 class="mt-16 mb-8">Responsive images:</h2>
-    <code class="mb-3 block">{'<Picture src="/src/assets/images/demo-img.jpg" alt="" />'}</code>
+    <code class="block mb-3">{'<Picture src="/src/assets/images/demo-img.jpg" alt="" />'}</code>
     <div class="grid grid-cols-2 gap-10">
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
@@ -99,9 +99,9 @@ import { Icon } from "astro-icon";
 
   <!-- Background image -->
   <BackgroundPicture src="/src/assets/images/bg-img.jpg">
-    <div class="container-dark py-10 mt-16">
+    <div class="py-10 mt-16 container-dark">
       <h2>Background image</h2>
-      <code class="mb-3 block">{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code>
+      <code class="block mb-3">{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code>
       <p class="max-w-[900px]">
         Use BackgroundPicture coomponent. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio
         perspiciatis hic error nesciunt libero ab asperiores odio delectus nostrum id vero deleniti beatae alias

@@ -206,7 +206,7 @@ import { Collapse } from '@components/Collapse.astro'
 
 ### Offcanvas
 
-on devices up to the size of the `breakpoint` attribute will appear toggler, which after clicking will display offcanvas with sidebar content.
+On devices up to the size of the `breakpoint` attribute will appear toggler, which after clicking will display offcanvas with sidebar content.
 
 On devices larger than `breakpoint`, the toggler will disappear and "sidebar content" will appear as a normal element.
 
