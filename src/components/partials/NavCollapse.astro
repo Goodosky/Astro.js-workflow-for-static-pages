@@ -29,7 +29,7 @@ const id = (Math.random() + 1).toString(36).substring(7);
 
   <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop`}>
     <ul
-      class="flex flex-col p-2 gap-2 [&_li]:whitespace-nowrap mt-3 bg-white border group-hover:border-zinc-300 rounded">
+      class="flex flex-col p-2 gap-3 [&_li]:whitespace-nowrap mt-3 bg-white border group-hover:border-zinc-300 rounded [&_a]:!text-base">
       <slot />
     </ul>
   </div>
@@ -44,7 +44,7 @@ const id = (Math.random() + 1).toString(36).substring(7);
     }
 
     .NavCollapse-content-desktop ul {
-      @apply gap-4 px-5 py-3 shadow-2xl;
+      @apply px-5 py-3 shadow-2xl;
     }
   }
 </style>
