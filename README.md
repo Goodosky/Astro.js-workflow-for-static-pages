@@ -170,7 +170,7 @@ import { Icon } from 'astro-icon'
 
 ```astro
 ---
-import { Collapse } from '@components/Collapse.astro'
+import Collapse from '@components/Collapse.astro'
 ---
 
 <Collapse title="Lorem ipsum dolor sit amet">
@@ -184,7 +184,7 @@ Just add `group="{GROUP NAME HERE}"` attribute. For example:
 
 ```astro
 ---
-import { Collapse } from '@components/Collapse.astro'
+import Collapse from '@components/Collapse.astro'
 ---
 
 <Collapse title="Accordion item 1" group="accordion-1">
@@ -202,7 +202,52 @@ import { Collapse } from '@components/Collapse.astro'
 
 ### Slider
 
-... Not ready yet ...
+We use [Splide.js](https://splidejs.com/) and the `Slider` component.
+
+You can customize it, by a `options` attribute.
+Available options: https://splidejs.com/guides/options/
+
+```astro
+---
+import Slider from "@components/Slider.astro";
+import Slide from "@partials/Slide.astro";
+---
+
+<Slider options={{perPage: 3, pagination: true }}>
+  <!-- Usecase 1: Prepare a slide template (edit Slide.astro or create a new component) and use it -->
+  <Slide header="Slide 01" text="Lorem ipsum text" btn="See more" />
+  <Slide header="Slide 02" text="Lorem ipsum text" btn="See more" />
+  <Slide header="Slide 02" text="Lorem ipsum text" btn="See more" />
+
+  <!-- Usecase 2: Write html inside Slide component -->
+  <Slide class="p-5 bg-primary">First slide HTML here</Slide>
+  <Slide class="p-5 bg-primary">Second slide HTML here</Slide>
+  <Slide class="p-5 bg-primary">Third slide HTML here</Slide>
+</Slider>
+```
+
+#### Changing the appearance of navigation (arrows)
+
+**for the whole page:** adjust the `classes` option by editing the Splide.defaults object in the `Slider.astro` file.
+
+**for a single component:** Follow [docs](https://splidejs.com/guides/arrows/#custom-arrows) and add a `slot` attribute (values: "before-slides" or "after-slides"). For example:
+
+```astro
+<Slider options={{ perPage: 2, pagination: false }}>
+  <!-- Slides -->
+  <!-- ... -->
+
+  <!-- Custom arrows -->
+  <div class="inline-block p-1 mt-3 divide-x splide__arrows bg-secondary" slot="after-slides">
+    <button class="px-2 py-1 splide__arrow splide__arrow--prev">
+      <Icon name="ic:outline-arrow-back-ios" class="text-white w-7 h-7" />
+    </button>
+    <button class="px-2 py-1 splide__arrow splide__arrow--next">
+      <Icon name="ic:outline-arrow-forward-ios" class="text-white w-7 h-7" />
+    </button>
+  </div>
+</Slider>
+```
 
 ### Offcanvas
 
@@ -212,7 +257,7 @@ On devices larger than `breakpoint`, the toggler will disappear and "sidebar con
 
 ```astro
 ---
-import { Offcanvas } from '@components/Offcanvas.astro'
+import Offcanvas from '@components/Offcanvas.astro'
 ---
 
 <Offcanvas title="Menu" breakpoint="lg">
