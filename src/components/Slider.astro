@@ -67,7 +67,7 @@ const optionsString = JSON.stringify(options);
     let elms = document.getElementsByClassName("splide");
 
     for (let i = 0; i < elms.length; i++) {
-      new Splide(elms[i]).mount();
+      new Splide(elms[i] as HTMLElement).mount();
     }
   });
 </script>
