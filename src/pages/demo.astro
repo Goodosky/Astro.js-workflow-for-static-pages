@@ -92,14 +92,25 @@ import { Icon } from "astro-icon";
     </Slider>
 
     <h3>Custom arrows:</h3>
-    <Slider options={{ perPage: 2, pagination: false }}>
+    <Slider
+      options={{
+        perPage: 2,
+        pagination: false,
+        breakpoints: {
+          640: {
+            perPage: 1,
+            arrows: true,
+            pagination: false,
+          },
+        },
+      }}>
       <!-- Slides -->
       <Slide class="p-5 bg-primary flex-center text-dark">First slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Second slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Third slide</Slide>
 
       <!-- Arrows -->
-      <div class="inline-block p-1 mt-3 divide-x splide__arrows bg-secondary" slot="after-slides">
+      <div class="inline-block p-1 mt-2 divide-x splide__arrows bg-secondary" slot="after-slides">
         <button class="px-2 py-1 splide__arrow splide__arrow--prev">
           <Icon name="ic:outline-arrow-back-ios" class="text-white w-7 h-7" />
         </button>
