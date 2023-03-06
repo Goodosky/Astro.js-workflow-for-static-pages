@@ -47,7 +47,10 @@ All you need to do is:
 1. ##### Install appropriate font (e.g. manrope)
    `npm install @fontsource/manrope`
 1. ##### Import it in `src/layouts/Layout.astro`
-   `import "@fontsource/manrope";`
+   ```js
+   import "@fontsource/manrope/400.css";
+   import "@fontsource/manrope/700.css";
+   ```
 
 #### 3. Set default styles in `src/assets/styles/base.css`
 
