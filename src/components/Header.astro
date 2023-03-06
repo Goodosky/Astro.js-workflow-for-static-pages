@@ -5,19 +5,13 @@ import NavCollapse from "@partials/NavCollapse.astro";
 const navbarBreakpoint = "lg";
 ---
 
-<header class="container flex items-center justify-between py-4">
+<header class="container flex relative z-50 items-center justify-between py-4">
   <a class="text-3xl logo" href="/">LOGO</a>
   <nav>
     <Offcanvas title="Menu" breakpoint={navbarBreakpoint}>
-      <!-- Toggler -->
-      <div slot="toggler" class="p-2 space-y-2" aria-label="Przełącz menu">
-        <span class="block w-8 h-0.5 bg-dark"></span>
-        <span class="block w-8 h-0.5 bg-dark"></span>
-        <span class="block w-8 h-0.5 bg-dark"></span>
-      </div>
-
       <!-- Sidebar content -->
-      <ul class="gap-3 lg:gap-7 flex max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg">
+      <ul
+        class={`gap-3 lg:gap-7 flex ${navbarBreakpoint}:items-center max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg`}>
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
@@ -31,3 +25,6 @@ const navbarBreakpoint = "lg";
     </Offcanvas>
   </nav>
 </header>
+
+<!-- List of dynamic classes (Tailwind won't purge them): -->
+<!-- md:items-center lg:items-center xl:items-center 2xl:items-center -->

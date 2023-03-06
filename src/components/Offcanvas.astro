@@ -13,7 +13,14 @@ const id = (Math.random() + 1).toString(36).substring(7);
 ---
 
 <button class={`${breakpoint}:hidden block`} data-target={id} data-toggle="sidebar">
-  <slot name="toggler" />
+  <slot name="toggler">
+    <!-- Default toggler -->
+    <div slot="toggler" class="p-2 space-y-2" aria-label="Przełącz menu">
+      <span class="block w-8 h-0.5 bg-dark"></span>
+      <span class="block w-8 h-0.5 bg-dark"></span>
+      <span class="block w-8 h-0.5 bg-dark"></span>
+    </div>
+  </slot>
 </button>
 
 <section id={id} class={`max-${breakpoint}:sidebar translate-x-full ${breakpoint}:translate-x-0`} tabindex="-1">
