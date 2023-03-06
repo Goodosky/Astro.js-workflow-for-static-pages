@@ -32,7 +32,7 @@
   }
 
   a {
-    @apply hover:text-black;
+    @apply hover:text-secondary;
   }
 
   .animated-underline {
@@ -41,9 +41,9 @@
 
   .container-dark {
     @apply container;
-    @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header;
+    @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header [&_h4]:text-light-header;
     @apply [&]:text-light-text;
-    @apply [&_a]:hover:text-white;
+    @apply hover:[&_a]:text-white;
     @apply [&_.animated-underline]:after:bg-white;
   }
 }
