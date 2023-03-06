@@ -2,14 +2,20 @@
 import Offcanvas from "@components/Offcanvas.astro";
 import NavCollapse from "@partials/NavCollapse.astro";
 
+import { Picture } from "astro-imagetools/components";
+
 const navbarBreakpoint = "lg";
 ---
 
-<header class="container flex relative z-50 items-center justify-between py-4">
-  <a class="text-3xl logo" href="/">LOGO</a>
+<header class="container flex relative z-50 items-center justify-between py-3">
+  <!-- Logo -->
+  <a class="max-w-[190px]" href="/">
+    <Picture src="/src/assets/images/logo.png" alt="Adwokat Tomasz Leśnik" loading="eager" placeholder="none" />
+  </a>
+
+  <!-- Navmenu -->
   <nav>
     <Offcanvas title="Menu" breakpoint={navbarBreakpoint}>
-      <!-- Sidebar content -->
       <ul
         class={`gap-3 lg:gap-7 flex ${navbarBreakpoint}:items-center max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg`}>
         <li><a href="#">Link 1</a></li>
