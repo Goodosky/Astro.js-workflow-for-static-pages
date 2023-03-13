@@ -4,9 +4,10 @@ import { Icon } from "astro-icon";
 interface Props {
   title: string;
   breakpoint?: "md" | "lg" | "xl" | "2xl";
+  class?: string;
 }
 
-const { title, breakpoint = "lg" } = Astro.props;
+const { title, breakpoint = "lg", class: className } = Astro.props;
 
 // Draw random string and assign as id
 const id = (Math.random() + 1).toString(36).substring(7);
@@ -19,7 +20,8 @@ const id = (Math.random() + 1).toString(36).substring(7);
     data-toggle="collapse"
     aria-expanded="false"
     aria-controls={id}
-    role="button">
+    role="button"
+  >
     {title}
     <Icon
       name="ic:outline-arrow-forward-ios"
@@ -27,9 +29,10 @@ const id = (Math.random() + 1).toString(36).substring(7);
     />
   </a>
 
-  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop`}>
+  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop ${className}`}>
     <ul
-      class="flex flex-col p-2 gap-3 [&_li]:whitespace-nowrap mt-3 bg-white border group-hover:border-zinc-300 rounded [&_a]:!text-base">
+      class="grid p-2 gap-y-3 gap-x-7 [&_li]:whitespace-nowrap mt-3 border border-zinc-300 rounded bg-white [&_a]:!text-base [&>li]:marker:!content-['▸__'] [&>li]:max-sm:ml-2.5 [&>li]:marker:text-primary"
+    >
       <slot />
     </ul>
   </div>
@@ -44,7 +47,7 @@ const id = (Math.random() + 1).toString(36).substring(7);
     }
 
     .NavCollapse-content-desktop ul {
-      @apply px-5 py-3 shadow-2xl;
+      @apply px-7 py-3 shadow-2xl w-max;
     }
   }
 </style>
