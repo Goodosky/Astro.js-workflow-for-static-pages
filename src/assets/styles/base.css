@@ -14,37 +14,44 @@
   h3,
   h4,
   h5 {
-    @apply text-header font-header mb-[0.4em];
+    @apply text-header font-header mb-[0.4em] !leading-[130%] tracking-[-0.7px];
   }
 
   h1 {
     @apply text-4xl sm:text-5xl;
   }
+
   h2 {
-    @apply text-[2rem] sm:text-4xl;
+    @apply text-[1.8rem] sm:text-[2.375rem];
   }
+
   h3 {
-    @apply text-2xl;
+    @apply text-lg;
   }
 
   p {
-    @apply text-[1rem]  lg:text-[1.1875rem] !leading-[170%] tracking-[0.51px] mb-[0.75em];
+    @apply font-normal text-[1rem] xl:text-[1.0625rem] !leading-[170%] lg:tracking-[0.51px] mb-[1em];
   }
 
   a {
-    @apply hover:text-secondary;
+    @apply text-dark hover:text-primary;
+  }
+
+  b,
+  strong {
+    @apply text-black;
   }
 
   .animated-underline {
     @apply relative after:w-0 hover:after:w-full after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-dark after:transition-all after:ease-out after:duration-200;
   }
 
-  .container-dark {
-    @apply container;
+  .dark {
     @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header [&_h4]:text-light-header;
     @apply [&]:text-light-text;
     @apply hover:[&_a]:text-white;
     @apply [&_.animated-underline]:after:bg-white;
+    @apply [&_b]:text-white [&_strong]:text-white;
   }
 }
 
@@ -52,22 +59,22 @@
 @layer components {
   .btn {
     /* Base styles for btn (like in Bootsrap) */
-    @apply inline-block w-fit px-6 py-2 font-medium transition-colors duration-200 rounded-lg cursor-pointer;
+    @apply inline-block px-6 py-2 font-medium transition-colors duration-200 cursor-pointer w-fit;
   }
 
   .btn-primary {
-    @apply text-black btn bg-primary hover:bg-dark hover:text-white;
+    @apply text-white btn bg-primary hover:bg-secondary hover:text-dark;
   }
 
   .btn-secondary {
-    @apply text-white btn bg-secondary hover:bg-dark hover:text-white;
+    @apply text-dark btn bg-secondary hover:bg-primary hover:text-white;
   }
 }
 
 /* --- UTILITIES --- */
 @layer utilities {
   .row {
-    @apply flex flex-row flex-wrap items-center;
+    @apply flex flex-row  items-center gap-10 lg:gap-x-20 [&>*]:max-w-full;
   }
 
   .flex-center {
@@ -79,6 +86,14 @@
   }
 
   .inset-center {
-    @apply absolute top-1/2 left-1/2 translate-x-1/2 translate-y-1/2;
+    @apply absolute translate-x-1/2 translate-y-1/2 top-1/2 left-1/2;
+  }
+
+  .img-cover {
+    @apply relative w-full;
+  }
+  .img-cover picture,
+  .img-cover img {
+    @apply !absolute w-full !h-full object-cover;
   }
 }

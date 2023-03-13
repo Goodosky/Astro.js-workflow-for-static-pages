@@ -103,7 +103,8 @@ import { Icon } from "astro-icon";
             pagination: false,
           },
         },
-      }}>
+      }}
+    >
       <!-- Slides -->
       <Slide class="p-5 bg-primary flex-center text-dark">First slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Second slide</Slide>
@@ -123,9 +124,9 @@ import { Icon } from "astro-icon";
 
   <!-- Dark section -->
   <section class="py-10 bg-dark">
-    <div class="container-dark">
+    <div class="container dark">
       <h2>Its dark section</h2>
-      <p>Use .container-dark insted .container to have light font colors etc...</p>
+      <p>Use .container dark insted .container to have light font colors etc...</p>
     </div>
   </section>
 
@@ -141,7 +142,7 @@ import { Icon } from "astro-icon";
 
   <!-- Background image -->
   <BackgroundPicture src="/src/assets/images/bg-img.jpg">
-    <div class="py-10 mt-16 container-dark">
+    <div class="container py-10 mt-16 dark">
       <h2>Background image</h2>
       <code class="block mb-3">{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code>
       <p class="max-w-[900px]">
