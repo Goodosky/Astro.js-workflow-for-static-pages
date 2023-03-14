@@ -2,7 +2,7 @@ import { defineConfig } from "astro-imagetools/config";
 
 export default defineConfig({
   breakpoints: { minWidth: 400 },
-  assetFileNames: "_astro/[name]@[width][extname]",
+  assetFileNames: "assets/[name]@[width][extname]",
 
   formatOptions: {
     jpg: {
