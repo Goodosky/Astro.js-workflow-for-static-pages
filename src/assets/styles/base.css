@@ -49,7 +49,7 @@
   .dark {
     @apply [&_h1]:text-light-header [&_h2]:text-light-header [&_h3]:text-light-header [&_h4]:text-light-header;
     @apply [&]:text-light-text;
-    @apply hover:[&_a]:text-white;
+    @apply [&_a]:text-white hover:[&_a]:text-primary;
     @apply [&_.animated-underline]:after:bg-white;
     @apply [&_b]:text-white [&_strong]:text-white;
   }
@@ -94,6 +94,6 @@
   }
   .img-cover picture,
   .img-cover img {
-    @apply !absolute w-full !h-full object-cover;
+    @apply !absolute w-full !h-full object-cover inset-0;
   }
 }
