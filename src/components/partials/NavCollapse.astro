@@ -20,8 +20,7 @@ const id = (Math.random() + 1).toString(36).substring(7);
     data-toggle="collapse"
     aria-expanded="false"
     aria-controls={id}
-    role="button"
-  >
+    role="button">
     {title}
     <Icon
       name="ic:outline-arrow-forward-ios"
@@ -29,10 +28,11 @@ const id = (Math.random() + 1).toString(36).substring(7);
     />
   </a>
 
-  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop ${className}`}>
+  <div
+    id={id}
+    class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop  ${className}`}>
     <ul
-      class="grid p-2 gap-y-3 gap-x-7 [&_li]:whitespace-nowrap mt-3 border border-zinc-300 rounded bg-white [&_a]:!text-base [&>li]:marker:!content-['▸__'] [&>li]:max-sm:ml-2.5 [&>li]:marker:text-primary"
-    >
+      class="grid p-2 gap-y-3 gap-x-7 [&_li]:whitespace-nowrap mt-3 border border-zinc-300 rounded bg-white list-outside [&>li]:marker:content-['▸__'] max-sm:[&>li]:ml-2.5 [&>li]:marker:text-primary [&_a]:!text-base">
       <slot />
     </ul>
   </div>
