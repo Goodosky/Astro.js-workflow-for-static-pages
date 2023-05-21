@@ -11,7 +11,7 @@ const { options, class: className = false } = Astro.props;
 const optionsString = JSON.stringify(options);
 ---
 
-<section class:list={["splide", className]} aria-label="Splide Basic HTML Example" data-splide={optionsString}>
+<section class:list={["splide", className]} aria-label="Karuzela" data-splide={optionsString}>
   <slot name="before-slides" />
 
   <!-- Slides -->

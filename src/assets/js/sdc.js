@@ -173,9 +173,9 @@ window.onload = () => {
       let icon = document.querySelector(`[data-target="${targetElement}"] .collapse-icon`);
 
       if (icon != null) {
-        icon.classList.contains("rotate-90")
-          ? icon.classList.remove("rotate-90")
-          : icon.classList.add("rotate-90");
+        icon.classList.contains("rotate-180")
+          ? icon.classList.remove("rotate-180")
+          : icon.classList.add("rotate-180");
       }
     };
 

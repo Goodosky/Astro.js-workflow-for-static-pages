@@ -4,28 +4,32 @@ import { Icon } from "astro-icon";
 interface Props {
   title: string;
   group?: string;
+  expanded?: boolean;
 }
 
-const { title, group } = Astro.props;
+const { title, group, expanded = false } = Astro.props;
 
 // Draw random string and assign as id
 const id = (Math.random() + 1).toString(36).substring(7);
 ---
 
-<div class="rounded-lg shadow-sm max-w-xl mb-5 border">
+<div class="w-full mb-5 border shadow-sm lg:max-w-xl border-primary">
   <button
-    class="flex justify-between items-center gap-x-3 px-4 py-3 text-start sm:py-4 sm:gap-x-4 w-full"
+    class="flex items-center justify-between w-full px-4 py-3 bg-primary gap-x-3 text-start sm:py-4 sm:gap-x-4"
     data-target={id}
     data-toggle="collapse"
-    aria-expanded="false"
+    aria-expanded={expanded}
     aria-controls={id}>
-    <h3 class="text-base font-bold mb-0 sm:text-lg w-full">{title}</h3>
-    <Icon name="ic:outline-arrow-forward-ios" class="transition-transform w-6 h-6 duration-300 collapse-icon" />
+    <h2 class="w-full mb-0 text-base text-white sm:text-xl">{title}</h2>
+    <Icon
+      name="ic:round-keyboard-arrow-down"
+      class={`${expanded && "rotate-180"} w-6 h-6 transition-transform duration-300 arrow-collapsee collapse-icon`}
+    />
   </button>
 
-  <div id={id} class="h-0 overflow-hidden transition-all" data-accordion={group}>
-    <div class="px-4 pb-3">
-      <slot />
+  <div id={id} class={`${expanded ? "" : "h-0"} overflow-hidden transition-all`} data-accordion={group}>
+    <div class="px-5 py-3">
+      <slot class="text-primary" />
     </div>
   </div>
 </div>

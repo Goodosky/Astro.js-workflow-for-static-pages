@@ -15,7 +15,7 @@ const id = (Math.random() + 1).toString(36).substring(7);
 
 <li class="relative group">
   <a
-    class="flex justify-between items-center gap-x-1 w-full after:hidden [&_svg]:aria-expanded:-rotate-90 group-hover:text-dark"
+    class="flex justify-between items-center gap-x-1.5 w-full after:hidden [&_svg]:aria-expanded:-rotate-180 group-hover:text-dark"
     data-target={id}
     data-toggle="collapse"
     aria-expanded="false"
@@ -23,16 +23,14 @@ const id = (Math.random() + 1).toString(36).substring(7);
     role="button">
     {title}
     <Icon
-      name="ic:outline-arrow-forward-ios"
-      class="w-4 h-4 transition-transform duration-300 rotate-90 collapse-icon lg:group-hover:-rotate-90"
+      name="iconoir:nav-arrow-down"
+      class="w-6 transition-transform duration-300 lg:w-5 collapse-icon lg:group-hover:-rotate-180"
     />
   </a>
 
-  <div
-    id={id}
-    class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop  ${className}`}>
+  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop ${className}`}>
     <ul
-      class="grid p-2 gap-y-3 gap-x-7 [&_li]:whitespace-nowrap mt-3 border border-zinc-300 rounded bg-white list-outside [&>li]:marker:content-['▸__'] max-sm:[&>li]:ml-2.5 [&>li]:marker:text-primary [&_a]:!text-base">
+      class="grid p-2 gap-y-3 gap-x-7 [&_li]:whitespace-nowrap mt-3 border border-zinc-300 rounded bg-white list-outside marker:[&_li]:content-['▸__'] max-sm:[&_li]:ml-2.5 marker:[&_li]:text-primary [&_a]:!text-[15px]">
       <slot />
     </ul>
   </div>
@@ -43,11 +41,14 @@ const id = (Math.random() + 1).toString(36).substring(7);
 
   @layer components {
     .NavCollapse-content-desktop {
-      @apply group-hover:h-auto absolute top-full -left-5;
+      @apply group-hover:h-auto absolute top-full -left-7;
     }
 
     .NavCollapse-content-desktop ul {
-      @apply px-7 py-3 shadow-2xl w-max;
+      @apply shadow-2xl w-max grid-cols-1 px-7 py-3;
+
+      /* Two columns */
+      /* @apply grid-cols-2 py-5; */
     }
   }
 </style>
