@@ -7,7 +7,26 @@ import { Picture } from "astro-imagetools/components";
 const navbarBreakpoint = "lg";
 ---
 
-<header class="container flex relative z-50 items-center justify-between py-3">
+<!-- Preheader -->
+<section class="py-2 bg-dark">
+  <div class="container dark">
+    <div class="flex justify-between">
+      <!-- Left -->
+      <div class="flex gap-x-4 sm:gap-x-6">
+        <a href="tel:+48607085576" class="max-sm:text-xs"> +48 607 085 576</a>
+        <a href="mailto:reception@cdim.pl" class="max-sm:text-xs"> reception@cdim.pl</a>
+      </div>
+
+      <!-- Right -->
+      <div class="flex items-center gap-x-3.5">
+        <!-- content -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Header -->
+<header class="container relative z-50 flex items-center justify-between py-3">
   <!-- Logo -->
   <a class="max-w-[190px]" href="/">
     <Picture src="/src/assets/images/logo.png" alt="Adwokat Tomasz Leśnik" loading="eager" placeholder="none" />
@@ -18,15 +37,46 @@ const navbarBreakpoint = "lg";
     <Offcanvas title="Menu" breakpoint={navbarBreakpoint}>
       <ul
         class={`gap-3 lg:gap-7 flex ${navbarBreakpoint}:items-center max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg`}>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <NavCollapse title="NavCollapse" breakpoint={navbarBreakpoint}>
-          <li><a href="#">Collapse Link 1</a></li>
-          <li><a href="#">Collapse Link 2</a></li>
-          <li><a href="#">Collapse Link 3</a></li>
+        <NavCollapse
+          title="Megamenu"
+          breakpoint={navbarBreakpoint}
+          grid={false}
+          class="max-[1850px]:!left-auto max-[1850px]:!-right-64">
+          <li class="grid grid-cols-3 gap-y-3 gap-x-10">
+            <div>
+              <strong class="-ml-3 font-semibold">Category1:</strong>
+              <ul class="mt-3 space-y-3">
+                <li><a href="#">CollapseLink1</a></li>
+                <li><a href="#">CollapseLink2</a></li>
+                <li><a href="#">CollapseLink3</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <strong class="-ml-3 font-semibold">Category2:</strong>
+              <ul class="mt-3 space-y-3">
+                <li><a href="#">CollapseLink1</a></li>
+                <li><a href="#">CollapseLink2</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <strong class="-ml-3 font-semibold">Category3:</strong>
+              <ul class="mt-3 space-y-3">
+                <li><a href="#">CollapseLink1</a></li>
+                <li><a href="#">CollapseLink2</a></li>
+              </ul>
+            </div>
+          </li>
         </NavCollapse>
-        <li><a href="#">Link 5</a></li>
+        <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <NavCollapse title="NavCollapse" breakpoint={navbarBreakpoint} cols={1}>
+          <li><a href="#">CollapseLink1</a></li>
+          <li><a href="#">CollapseLink2</a></li>
+          <li><a href="#">CollapseLink3</a></li>
+        </NavCollapse>
+        <li><a href="#">Link3</a></li>
       </ul>
     </Offcanvas>
   </nav>
