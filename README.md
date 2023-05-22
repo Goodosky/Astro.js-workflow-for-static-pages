@@ -156,7 +156,11 @@ We use [Astro Icon](https://github.com/natemoo-re/astro-icon) and we can use all
 import { Icon } from 'astro-icon'
 ---
 
-<Icon name="mdi:facebook" />
+<!-- To load from remote library (Iconify) -->
+<Icon name="mdi:facebook" /> 
+
+<!-- To load from local files (src/icons/ICON_NAME.svg) -->
+<Icon name="ICON_NAME" /> 
 ```
 
 ## My own components library
