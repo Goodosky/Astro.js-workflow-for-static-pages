@@ -143,8 +143,6 @@ window.onload = () => {
 
   // --- 01. COLLAPSE ---
   const toggleCollapse = () => {
-    if (isCollapsing) return;
-
     const showCollapse = (targetElement) => {
       targetElement.classList.remove("h-0");
 
@@ -153,8 +151,8 @@ window.onload = () => {
       targetElement.style.height = "0";
       setTimeout(() => (targetElement.style.height = contentHeight), 50);
       setTimeout(() => targetElement.removeAttribute("style"), 500);
+      setTimeout(() => targetElement.classList.remove("is-collapsing"), 301);
       enableTab(targetElement, false);
-      isCollapsing = false;
     };
 
     const hideCollapse = (targetElement) => {
@@ -163,10 +161,10 @@ window.onload = () => {
       targetElement.style.height = contentHeight;
       setTimeout(() => (targetElement.style.height = "0"), 50);
       setTimeout(() => targetElement.removeAttribute("style"), 500);
+      setTimeout(() => targetElement.classList.remove("is-collapsing"), 301);
 
       targetElement.classList.add("h-0");
       disableTab(targetElement, false);
-      isCollapsing = false;
     };
 
     const toggleIcon = (targetElement) => {
@@ -196,6 +194,10 @@ window.onload = () => {
     if (currentTarget == null) return null;
 
     let targetElement = document.getElementById(currentTarget);
+
+    if (targetElement.classList.contains("is-collapsing")) return null;
+    targetElement.classList.add("is-collapsing");
+
     targetElement.classList.contains("h-0") ? showCollapse(targetElement) : hideCollapse(targetElement);
 
     toggleIcon(currentTarget);
