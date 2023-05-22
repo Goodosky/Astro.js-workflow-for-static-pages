@@ -29,7 +29,8 @@
     @apply text-lg;
   }
 
-  p {
+  p,
+  .text {
     @apply font-normal text-[1rem] xl:text-[1.0625rem] !leading-[170%] lg:tracking-[0.51px] mb-[1em];
   }
 
