@@ -30,7 +30,10 @@ const id = (Math.random() + 1).toString(36).substring(7);
     />
   </a>
 
-  <div id={id} class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop ${className}`}>
+  <div
+    id={id}
+    class={`h-0 overflow-hidden transition-all ${breakpoint}:NavCollapse-content-desktop ${className}`}
+    data-accordion="navCollapse">
     <ul
       class={`${grid && "grid"} ${
         "grid-cols-" + cols
