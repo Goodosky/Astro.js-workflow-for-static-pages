@@ -97,4 +97,8 @@
   .img-cover img {
     @apply !absolute w-full !h-full object-cover inset-0;
   }
+
+  .overlay::after {
+    @apply content-[''] absolute inset-0 bg-black opacity-60;
+  }
 }
