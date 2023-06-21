@@ -1,0 +1,50 @@
+---
+import { Picture } from "astro-imagetools/components";
+import sizeOf from "image-size";
+import "glightbox/dist/css/glightbox.css";
+
+export function getLocalImageSize(src) {
+  const computedSrc = src.slice(1); // slice to remove the leading slash
+  const dimensions = sizeOf(computedSrc);
+  if (!dimensions || !dimensions.width || !dimensions.height) {
+    throw new Error(`Failed to get dimensions for local image: ${computedSrc}`);
+  }
+  return {
+    width: dimensions.width,
+    height: dimensions.height,
+  };
+}
+
+export function getImageHref(src) {
+  const parts = src.replace("/src/assets/images", "/assets").split("."); // slice to remove the leading slash
+  const { width } = getLocalImageSize(src);
+
+  if (parts[1] == "jpg") {
+    parts[1] = "jpeg";
+  }
+
+  return parts[0] + "@" + width + "w." + parts[1];
+}
+
+interface Props {
+  src: string;
+  gallery?: string;
+  alt?: string;
+}
+
+const { src, gallery, alt = "" } = Astro.props;
+---
+
+<a href={getImageHref(src)} class="glightbox" data-gallery={gallery}>
+  <Picture src={src} alt={alt} />
+</a>
+
+<script>
+  import GLightbox from "glightbox";
+
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    selector: ".glightbox",
+  });
+</script>

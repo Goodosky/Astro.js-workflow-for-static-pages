@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Collapse from "@components/Collapse.astro";
 import Offcanvas from "@components/Offcanvas.astro";
+import Lightbox from "@components/Lightbox.astro";
 import Slider from "@components/Slider.astro";
 import Slide from "@partials/Slide.astro";
 import { Picture, BackgroundPicture } from "astro-imagetools/components";
@@ -103,8 +104,7 @@ import { Icon } from "astro-icon";
             pagination: false,
           },
         },
-      }}
-    >
+      }}>
       <!-- Slides -->
       <Slide class="p-5 bg-primary flex-center text-dark">First slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Second slide</Slide>
@@ -137,6 +137,18 @@ import { Icon } from "astro-icon";
     <div class="grid grid-cols-2 gap-10">
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <section class="container">
+    <h2 class="mt-16 mb-8">Lightbox:</h2>
+    <code class="block mb-3">
+      {'<Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />'}
+    </code>
+    <div class="grid grid-cols-2 gap-10">
+      <Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />
+      <Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />
     </div>
   </section>
 
