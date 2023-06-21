@@ -1,0 +1,40 @@
+.hf-message {
+  @apply block mt-5 text-base px-3 py-1;
+}
+
+.hf-message-success {
+  @apply bg-green-700 text-green-50;
+}
+
+.hf-message-error {
+  @apply bg-red-100 text-red-700;
+}
+
+.hf-form label {
+  @apply mb-1 block text-lg text-neutral-900;
+}
+
+.hf-form input,
+.hf-form textarea {
+  @apply w-full bg-light p-3 border;
+}
+
+.hf-form textarea {
+  @apply h-72 sm:h-60;
+}
+
+.hf-form input[type="checkbox"] {
+  @apply opacity-0 absolute top-5 left-4 w-1;
+}
+
+.hf-form .check {
+  @apply lg:text-base text-sm cursor-pointer pl-10 relative text-light-text;
+}
+
+.hf-form .check:after {
+  @apply content-[''] h-7 w-7 bg-secondary absolute left-0 top-0 block;
+}
+
+.hf-form .checkbox input:checked + .check:before {
+  @apply content-[''] h-2 w-4 rounded-sm border-b-4 border-l-4 border-white -rotate-45 absolute left-1.5 top-2 block z-50;
+}
