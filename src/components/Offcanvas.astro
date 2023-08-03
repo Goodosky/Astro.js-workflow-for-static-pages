@@ -12,10 +12,10 @@ const { title, breakpoint = "lg" } = Astro.props;
 const id = (Math.random() + 1).toString(36).substring(7);
 ---
 
-<button class={`${breakpoint}:hidden block`} data-target={id} data-toggle="sidebar">
+<button class={`${breakpoint}:hidden block`} data-target={id} data-toggle="sidebar" aria-label="Przełącz menu">
   <slot name="toggler">
     <!-- Default toggler -->
-    <div slot="toggler" class="p-2 space-y-2" aria-label="Przełącz menu">
+    <div slot="toggler" class="p-2 space-y-2">
       <span class="block w-8 h-0.5 bg-dark"></span>
       <span class="block w-8 h-0.5 bg-dark"></span>
       <span class="block w-8 h-0.5 bg-dark"></span>
