@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+// Draw random string and assign as id
+const id = (Math.random() + 1).toString(36).substring(7);
+---
+
+<button data-target={id} data-toggle="modal" aria-label="Przełącz menu">
+  <slot name="toggler">
+    <!-- Default toggler -->
+    <div slot="toggler" class="p-2 space-y-2">
+      <span class="block w-8 h-0.5 bg-dark"></span>
+      <span class="block w-8 h-0.5 bg-dark"></span>
+      <span class="block w-8 h-0.5 bg-dark"></span>
+    </div>
+  </slot>
+</button>
+
+<section id={id} tabindex="-1" class="hidden transition-opacity !fixed" data-modal={id}>
+  <div class="bg-white z-50 w-[min(90%,800px)] h-auto inset-center !fixed max-h-[95%] overflow-y-auto">
+    <div class="flex items-center bg-dark p-4 dark">
+      <!-- Header -->
+      <h4 class="w-full mb-0 text-2xl">{title}</h4>
+
+      <!-- Close btn -->
+      <button
+        data-target={id}
+        data-toggle="modal"
+        class="rounded w-9 h-9 text-zinc-700 bg-zinc-100"
+        aria-label="Zamknij">
+        <Icon name="ion:close-outline" />
+      </button>
+    </div>
+    <div class="p-4">
+      <slot />
+    </div>
+  </div>
+</section>

@@ -2,6 +2,11 @@
 
 // Execute when document DOM is loaded to make sure site contents are rendered
 window.onload = () => {
+  const getScrollbarWidth = () => {
+    return window.innerWidth - document.documentElement.clientWidth;
+  };
+
+  let scrollbarWidth = getScrollbarWidth();
   let currentTarget = null;
   let currentToggle = null;
   let isCollapsing = false;
@@ -82,11 +87,14 @@ window.onload = () => {
   const enableBodyScroll = () => {
     let body = document.getElementsByTagName("BODY")[0];
     body.classList.remove("overflow-y-hidden");
+    body.style.paddingRight = 0;
+    scrollbarWidth = getScrollbarWidth();
   };
 
   const disableBodyScroll = () => {
     let body = document.getElementsByTagName("BODY")[0];
     body.classList.add("overflow-y-hidden");
+    body.style.paddingRight = scrollbarWidth + "px";
   };
 
   let focusTrapElements = [];
