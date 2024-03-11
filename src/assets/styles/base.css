@@ -75,7 +75,7 @@
 /* --- UTILITIES --- */
 @layer utilities {
   .row {
-    @apply flex flex-row  items-center gap-10 lg:gap-x-20 [&>*]:max-w-full;
+    @apply grid items-center gap-10 lg:gap-x-20s;
   }
 
   .flex-center {
