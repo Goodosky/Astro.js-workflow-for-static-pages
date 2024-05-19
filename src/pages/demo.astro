@@ -1,12 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import Collapse from "@components/Collapse.astro";
-import Offcanvas from "@components/Offcanvas.astro";
 import Lightbox from "@components/Lightbox.astro";
+import Offcanvas from "@components/Offcanvas.astro";
 import Slider from "@components/Slider.astro";
+import Layout from "@layouts/Layout.astro";
 import Slide from "@partials/Slide.astro";
-import { Picture, BackgroundPicture } from "astro-imagetools/components";
 import { Icon } from "astro-icon";
+import { BackgroundPicture, Picture } from "astro-imagetools/components";
 ---
 
 <Layout title="Site title" description="Site description">
@@ -15,10 +15,12 @@ import { Icon } from "astro-icon";
     <div class="container py-8 lg:py-16">
       <h1>Stylebook H1</h1>
       <p class="lg:text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio perspiciatis hic error nesciunt
-        libero ab asperiores odio delectus nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
-        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae eligendi, molestiae praesentium
-        deleniti suscipit at, eius aperiam sequi sapiente reiciendis porro.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio
+        perspiciatis hic error nesciunt libero ab asperiores odio delectus
+        nostrum id vero deleniti beatae alias earum vel laboriosam, sapiente
+        obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae
+        eligendi, molestiae praesentium deleniti suscipit at, eius aperiam sequi
+        sapiente reiciendis porro.
       </p>
     </div>
   </section>
@@ -48,21 +50,24 @@ import { Icon } from "astro-icon";
   <section class="container py-4 lg:py-8">
     <h2>Collapses:</h2>
     <Collapse title="Lorem ipsum dolor sit amet">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
-      omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi,
+      dolore, dolores fuga repellendus a omnis, vitae totam quibusdam earum
+      rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
       ex dolorum?
     </Collapse>
 
     <p>Grouped collapses (accordion):</p>
     <Collapse title="Accordion item 1" group="groupName">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
-      omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi,
+      dolore, dolores fuga repellendus a omnis, vitae totam quibusdam earum
+      rerum corporis itaque? Inventore repudiandae laborum perspiciatis aperiam
       ex dolorum?
     </Collapse>
     <Collapse title="Accordion item 2" group="groupName">
       <span class="block mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi, dolore, dolores fuga repellendus a
-        omnis, vitae totam quibusdam earum rerum corporis itaque? Inventore repudiandae laborum perspiciatis
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi,
+        dolore, dolores fuga repellendus a omnis, vitae totam quibusdam earum
+        rerum corporis itaque? Inventore repudiandae laborum perspiciatis
         aperiam ex dolorum?
       </span>
 
@@ -78,7 +83,10 @@ import { Icon } from "astro-icon";
       <div slot="toggler" class="btn-primary">Sidebar toggler</div>
 
       <!-- Sidebar content (it will be normal list on devices larger than value of "breakpoint" attribute) -->
-      <div>Offcanvas content (this offcanvas works only for devices smaller than lg breakpoint)</div>
+      <div>
+        Offcanvas content (this offcanvas works only for devices smaller than lg
+        breakpoint)
+      </div>
     </Offcanvas>
   </section>
 
@@ -104,19 +112,26 @@ import { Icon } from "astro-icon";
             pagination: false,
           },
         },
-      }}>
+      }}
+    >
       <!-- Slides -->
       <Slide class="p-5 bg-primary flex-center text-dark">First slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Second slide</Slide>
       <Slide class="p-5 bg-primary flex-center text-dark">Third slide</Slide>
 
       <!-- Arrows -->
-      <div class="inline-block p-1 mt-2 divide-x splide__arrows bg-secondary" slot="after-slides">
+      <div
+        class="inline-block p-1 mt-2 divide-x splide__arrows bg-secondary"
+        slot="after-slides"
+      >
         <button class="px-2 py-1 splide__arrow splide__arrow--prev">
           <Icon name="ic:outline-arrow-back-ios" class="text-white w-7 h-7" />
         </button>
         <button class="px-2 py-1 splide__arrow splide__arrow--next">
-          <Icon name="ic:outline-arrow-forward-ios" class="text-white w-7 h-7" />
+          <Icon
+            name="ic:outline-arrow-forward-ios"
+            class="text-white w-7 h-7"
+          />
         </button>
       </div>
     </Slider>
@@ -126,14 +141,18 @@ import { Icon } from "astro-icon";
   <section class="py-10 bg-dark">
     <div class="container dark">
       <h2>Its dark section</h2>
-      <p>Use .container dark insted .container to have light font colors etc...</p>
+      <p>
+        Use .container dark insted .container to have light font colors etc...
+      </p>
     </div>
   </section>
 
   <!-- Responsive images -->
   <section class="container">
     <h2 class="mt-16 mb-8">Responsive images:</h2>
-    <code class="block mb-3">{'<Picture src="/src/assets/images/demo-img.jpg" alt="" />'}</code>
+    <code class="block mb-3"
+      >{'<Picture src="/src/assets/images/demo-img.jpg" alt="" />'}</code
+    >
     <div class="grid grid-cols-2 gap-10">
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
       <Picture src="/src/assets/images/demo-img.jpg" alt="" />
@@ -144,24 +163,37 @@ import { Icon } from "astro-icon";
   <section class="container">
     <h2 class="mt-16 mb-8">Lightbox:</h2>
     <code class="block mb-3">
-      {'<Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />'}
+      {
+        '<Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />'
+      }
     </code>
     <div class="grid grid-cols-2 gap-10">
-      <Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />
-      <Lightbox src="/src/assets/images/demo-img.jpg" alt="" gallery="gallery_name" />
+      <Lightbox
+        src="/src/assets/images/demo-img.jpg"
+        alt=""
+        gallery="gallery_name"
+      />
+      <Lightbox
+        src="/src/assets/images/demo-img.jpg"
+        alt=""
+        gallery="gallery_name"
+      />
     </div>
   </section>
 
   <!-- Background image -->
   <BackgroundPicture src="/src/assets/images/bg-img.jpg">
-    <div class="container py-10 mt-16 dark">
+    <div class="container py-10 mt-16 dark relative">
       <h2>Background image</h2>
-      <code class="block mb-3">{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code>
+      <code class="block mb-3"
+        >{'<BackgroundPicture src="/src/assets/images/bg-img.jpg">'}</code
+      >
       <p class="max-w-[900px]">
-        Use BackgroundPicture coomponent. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio
-        perspiciatis hic error nesciunt libero ab asperiores odio delectus nostrum id vero deleniti beatae alias
-        earum vel laboriosam, sapiente obcaecati nam, laudantium porro unde fugit. Dignissimos atque beatae
-        eligendi.
+        Use BackgroundPicture coomponent. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Rem distinctio perspiciatis hic error nesciunt libero
+        ab asperiores odio delectus nostrum id vero deleniti beatae alias earum
+        vel laboriosam, sapiente obcaecati nam, laudantium porro unde fugit.
+        Dignissimos atque beatae eligendi.
       </p>
     </div>
   </BackgroundPicture>
