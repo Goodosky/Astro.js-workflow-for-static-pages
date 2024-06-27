@@ -12,7 +12,12 @@ const { title, breakpoint = "lg" } = Astro.props;
 const id = (Math.random() + 1).toString(36).substring(7);
 ---
 
-<button class={`${breakpoint}:hidden block`} data-target={id} data-toggle="sidebar" aria-label="Przełącz menu">
+<button
+  class={`${breakpoint}:hidden block`}
+  data-target={id}
+  data-toggle="sidebar"
+  aria-label="Przełącz menu"
+>
   <slot name="toggler">
     <!-- Default toggler -->
     <div slot="toggler" class="p-2 space-y-2">
@@ -23,14 +28,25 @@ const id = (Math.random() + 1).toString(36).substring(7);
   </slot>
 </button>
 
-<section id={id} class={`max-${breakpoint}:sidebar translate-x-full ${breakpoint}:translate-x-0`} tabindex="-1">
+<section
+  id={id}
+  class={`max-${breakpoint}:sidebar translate-x-full ${breakpoint}:translate-x-0`}
+  tabindex="-1"
+>
   <!-- Sidebar header -->
-  <div class={`${breakpoint}:hidden flex justify-between items-center pt-4 pb-3 mb-5 border-b-[1px]`}>
+  <div
+    class={`${breakpoint}:hidden flex justify-between items-center pt-4 pb-3 mb-5 border-b-[1px]`}
+  >
     <!-- Header -->
     <h4 class="w-full mb-0 text-2xl">{title}</h4>
 
     <!-- Close btn -->
-    <button data-target={id} data-toggle="sidebar" class="rounded w-9 h-9 text-zinc-700 bg-zinc-100" aria-label="Zamknij">
+    <button
+      data-target={id}
+      data-toggle="sidebar"
+      class="rounded w-9 h-9 text-zinc-700 bg-zinc-100"
+      aria-label="Zamknij"
+    >
       <Icon name="ion:close-outline" />
     </button>
   </div>

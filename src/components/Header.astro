@@ -14,7 +14,9 @@ const navbarBreakpoint = "lg";
       <!-- Left -->
       <div class="flex gap-x-3 sm:gap-x-6">
         <a href="tel:+48607085576" class="max-sm:text-sm"> +48 607 085 576</a>
-        <a href="mailto:reception@cdim.pl" class="max-sm:text-sm"> reception@cdim.pl</a>
+        <a href="mailto:reception@cdim.pl" class="max-sm:text-sm">
+          reception@cdim.pl</a
+        >
       </div>
 
       <!-- Right -->
@@ -29,22 +31,29 @@ const navbarBreakpoint = "lg";
 <header class="container relative z-50 flex items-center justify-between py-3">
   <!-- Logo -->
   <a class="max-w-[190px]" href="/">
-    <Picture src="/src/assets/images/logo.png" alt="Adwokat Tomasz Leśnik" loading="eager" placeholder="none" />
+    <Picture
+      src="/src/assets/images/logo.png"
+      alt="Adwokat Tomasz Leśnik"
+      loading="eager"
+      placeholder="none"
+    />
   </a>
 
   <!-- Navmenu -->
   <nav>
     <Offcanvas title="Menu" breakpoint={navbarBreakpoint}>
       <ul
-        class={`gap-3 lg:gap-7 flex ${navbarBreakpoint}:items-center max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg`}>
+        class={`gap-3 lg:gap-7 flex ${navbarBreakpoint}:items-center max-lg:flex-col [&_a]:animated-underline [&_a]:text-lg`}
+      >
         <NavCollapse
           title="Megamenu"
           breakpoint={navbarBreakpoint}
           grid={false}
-          class="max-[1850px]:!left-auto max-[1850px]:!-right-64">
-          <li class="grid grid-cols-3 gap-y-3 gap-x-10">
+          class="max-[1850px]:!left-auto max-[1850px]:!-right-64"
+        >
+          <li class="grid lg:grid-cols-3 gap-y-5 sm lg:gap-y-3 gap-x-10">
             <div>
-              <strong class="-ml-3 font-semibold">Category1:</strong>
+              <strong class="lg:-ml-3 font-semibold">Category1:</strong>
               <ul class="mt-3 space-y-3">
                 <li><a href="#">CollapseLink1</a></li>
                 <li><a href="#">CollapseLink2</a></li>
@@ -53,7 +62,7 @@ const navbarBreakpoint = "lg";
             </div>
 
             <div>
-              <strong class="-ml-3 font-semibold">Category2:</strong>
+              <strong class="lg:-ml-3 font-semibold">Category2:</strong>
               <ul class="mt-3 space-y-3">
                 <li><a href="#">CollapseLink1</a></li>
                 <li><a href="#">CollapseLink2</a></li>
@@ -61,7 +70,7 @@ const navbarBreakpoint = "lg";
             </div>
 
             <div>
-              <strong class="-ml-3 font-semibold">Category3:</strong>
+              <strong class="lg:-ml-3 font-semibold">Category3:</strong>
               <ul class="mt-3 space-y-3">
                 <li><a href="#">CollapseLink1</a></li>
                 <li><a href="#">CollapseLink2</a></li>
